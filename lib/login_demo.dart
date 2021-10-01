@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test/home_page.dart';
+import 'package:test/sign_up.dart';
 
 class LoginDemo extends StatefulWidget {
   const LoginDemo({Key? key}) : super(key: key);
@@ -74,8 +75,7 @@ class _LoginDemoState extends State<LoginDemo> {
                   decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(20)),
-                  // ignore: deprecated_member_use
-                  child: FlatButton(
+                  child: TextButton(
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (_) => HomePage()));
@@ -86,9 +86,17 @@ class _LoginDemoState extends State<LoginDemo> {
                     ),
                   )),
               const SizedBox(
-                height: 130,
+                height: 80,
               ),
-              const Text('New User? Create Account')
+              TextButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => SignUpPage()));
+                  },
+                  child: const Text(
+                    'New User? Create Account',
+                    style: TextStyle(color: Colors.blue, fontSize: 20),
+                  ))
             ],
           ),
         ));
